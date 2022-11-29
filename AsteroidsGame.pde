@@ -24,6 +24,7 @@ public void keyPressed()
     bob.setYspeed(0);
     bob.setCenterX((int)(Math.random()*500));
     bob.setCenterY((int)(Math.random()*500));
+    bob.setPointDirection((int)(Math.random()*360));
   } else if (key == '5'){
     bob.accelerate(0.5);
   } else if (key == '4'){
@@ -33,4 +34,3 @@ public void keyPressed()
   }
   
 }
-
