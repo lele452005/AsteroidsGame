@@ -1,10 +1,16 @@
 Spaceship bob = new Spaceship();
+Astroid tim = new Astroid();
+ArrayList <Astroid> rocks = new ArrayList <Astroid>();
+
 Star [] starArr = new Star [200];
 public void setup() 
 {
   size(500,500);
   for (int i=0; i<200; i++){
     starArr[i] = new Star();
+  }
+  for (int x=0; x<=10; x++){
+    rocks.add(new Astroid());
   }
 }
 public void draw() 
@@ -15,8 +21,17 @@ public void draw()
   }
   bob.move();
   bob.show();
+  for (int i=0; i<rocks.size(); i++){
+    (rocks.get(i)).move();
+    (rocks.get(i)).show();
+    float d = dist((float)bob.getX(), (float)bob.getY(), (float) rocks.get(i).getX(), (float)rocks.get(i).getY());
+    if (d<20){
+      rocks.remove(i);
+    }
+  }
 }
 
+    
 public void keyPressed()
 {
   if (key == '2'){
